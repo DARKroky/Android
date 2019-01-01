@@ -17,6 +17,7 @@ import android.support.v7.widget.RecyclerView;
 import com.google.android.gms.ads.MobileAds;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.InterstitialAd;
 
 import java.lang.ref.WeakReference;
 import java.util.ArrayList;
@@ -33,6 +34,7 @@ public class StickerPackListActivity extends AddStickerPackActivity {
     private WhiteListCheckAsyncTask whiteListCheckAsyncTask;
     private ArrayList<StickerPack> stickerPackList;
     private AdView mAdView;
+    private InterstitialAd mInterstitialAd;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,6 +46,12 @@ public class StickerPackListActivity extends AddStickerPackActivity {
         MobileAds.initialize(this,
                 "ca-app-pub-3940256099942544~3347511713");
 
+        //Inter
+        mInterstitialAd = new InterstitialAd(this);
+        mInterstitialAd.setAdUnitId("ca-app-pub-3940256099942544/1033173712");
+        mInterstitialAd.loadAd(new AdRequest.Builder().build());
+
+        //Ads Banner
         mAdView = findViewById(R.id.adView);
         AdRequest adRequest = new AdRequest.Builder().build();
         mAdView.loadAd(adRequest);
@@ -81,6 +89,9 @@ public class StickerPackListActivity extends AddStickerPackActivity {
 
     private final StickerPackListAdapter.OnAddButtonClickedListener onAddButtonClickedListener = pack -> {
         addStickerPackToWhatsApp(pack.identifier, pack.name);
+        if (mInterstitialAd.isLoaded()) {
+            mInterstitialAd.show();
+        }
     };
 
     private void recalculateColumnCount() {
