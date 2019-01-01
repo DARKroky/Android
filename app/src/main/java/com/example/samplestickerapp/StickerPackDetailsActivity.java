@@ -23,6 +23,12 @@ import android.view.ViewTreeObserver;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.google.android.gms.ads.MobileAds;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.InterstitialAd;
+import com.google.android.gms.ads.AdListener;
+
 import java.lang.ref.WeakReference;
 
 public class StickerPackDetailsActivity extends AddStickerPackActivity {
@@ -50,17 +56,34 @@ public class StickerPackDetailsActivity extends AddStickerPackActivity {
     private StickerPack stickerPack;
     private View divider;
     private WhiteListCheckAsyncTask whiteListCheckAsyncTask;
+    private AdView mAdView;
+    private InterstitialAd mInterstitialAd;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.sticker_pack_details);
+        MobileAds.initialize(this,"ca-app-pub-3940256099942544~3347511713");
+
+        //Inter
+        mInterstitialAd = new InterstitialAd(this);
+        mInterstitialAd.setAdUnitId("ca-app-pub-3940256099942544/1033173712");
+        mInterstitialAd.loadAd(new AdRequest.Builder().build());
+
+        //Ads Banner
+        mAdView = findViewById(R.id.adView);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        mAdView.loadAd(adRequest);
+
+        mInterstitialAd.show();
+
         boolean showUpButton = getIntent().getBooleanExtra(EXTRA_SHOW_UP_BUTTON, false);
         stickerPack = getIntent().getParcelableExtra(EXTRA_STICKER_PACK_DATA);
         TextView packNameTextView = findViewById(R.id.pack_name);
         TextView packPublisherTextView = findViewById(R.id.author);
         ImageView packTrayIcon = findViewById(R.id.tray_image);
         TextView packSizeTextView = findViewById(R.id.pack_size);
+
 
         addButton = findViewById(R.id.add_to_whatsapp_button);
         alreadyAddedText = findViewById(R.id.already_added_text);
@@ -83,6 +106,7 @@ public class StickerPackDetailsActivity extends AddStickerPackActivity {
             getSupportActionBar().setDisplayHomeAsUpEnabled(showUpButton);
             getSupportActionBar().setTitle(showUpButton ? R.string.title_activity_sticker_pack_details_multiple_pack : R.string.title_activity_sticker_pack_details_single_pack);
         }
+
     }
 
     private void launchInfoActivity(String publisherWebsite, String publisherEmail, String privacyPolicyWebsite, String trayIconUriString) {

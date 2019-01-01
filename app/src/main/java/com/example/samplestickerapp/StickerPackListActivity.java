@@ -18,6 +18,7 @@ import com.google.android.gms.ads.MobileAds;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.InterstitialAd;
+import com.google.android.gms.ads.AdListener;
 
 import java.lang.ref.WeakReference;
 import java.util.ArrayList;
@@ -43,8 +44,7 @@ public class StickerPackListActivity extends AddStickerPackActivity {
         packRecyclerView = findViewById(R.id.sticker_pack_list);
         stickerPackList = getIntent().getParcelableArrayListExtra(EXTRA_STICKER_PACK_LIST_DATA);
         showStickerPackList(stickerPackList);
-        MobileAds.initialize(this,
-                "ca-app-pub-3940256099942544~3347511713");
+        MobileAds.initialize(this,"ca-app-pub-3940256099942544~3347511713");
 
         //Inter
         mInterstitialAd = new InterstitialAd(this);
@@ -91,6 +91,14 @@ public class StickerPackListActivity extends AddStickerPackActivity {
         addStickerPackToWhatsApp(pack.identifier, pack.name);
         if (mInterstitialAd.isLoaded()) {
             mInterstitialAd.show();
+            mInterstitialAd.setAdListener(new AdListener() {
+                @Override
+                public void onAdClosed() {
+                    // Load the next interstitial.
+                    mInterstitialAd.loadAd(new AdRequest.Builder().build());
+                }
+
+            });
         }
     };
 
