@@ -75,8 +75,6 @@ public class StickerPackDetailsActivity extends AddStickerPackActivity {
         AdRequest adRequest = new AdRequest.Builder().build();
         mAdView.loadAd(adRequest);
 
-        mInterstitialAd.show();
-
         boolean showUpButton = getIntent().getBooleanExtra(EXTRA_SHOW_UP_BUTTON, false);
         stickerPack = getIntent().getParcelableExtra(EXTRA_STICKER_PACK_DATA);
         TextView packNameTextView = findViewById(R.id.pack_name);
@@ -197,6 +195,17 @@ public class StickerPackDetailsActivity extends AddStickerPackActivity {
         if (isWhitelisted) {
             addButton.setVisibility(View.GONE);
             alreadyAddedText.setVisibility(View.VISIBLE);
+            if (mInterstitialAd.isLoaded()) {
+                mInterstitialAd.show();
+                mInterstitialAd.setAdListener(new AdListener() {
+                    @Override
+                    public void onAdClosed() {
+                        // Load the next interstitial.
+                        mInterstitialAd.loadAd(new AdRequest.Builder().build());
+                    }
+
+                });
+            }
         } else {
             addButton.setVisibility(View.VISIBLE);
             alreadyAddedText.setVisibility(View.GONE);
