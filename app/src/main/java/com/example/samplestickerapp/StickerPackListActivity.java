@@ -44,11 +44,11 @@ public class StickerPackListActivity extends AddStickerPackActivity {
         packRecyclerView = findViewById(R.id.sticker_pack_list);
         stickerPackList = getIntent().getParcelableArrayListExtra(EXTRA_STICKER_PACK_LIST_DATA);
         showStickerPackList(stickerPackList);
-        MobileAds.initialize(this,"ca-app-pub-3940256099942544~3347511713");
+        MobileAds.initialize(this,"ca-app-pub-6978323205998171~3722419131");
 
         //Inter
         mInterstitialAd = new InterstitialAd(this);
-        mInterstitialAd.setAdUnitId("ca-app-pub-3940256099942544/1033173712");
+        mInterstitialAd.setAdUnitId("ca-app-pub-6978323205998171/6625808281");
         mInterstitialAd.loadAd(new AdRequest.Builder().build());
 
         //Ads Banner
