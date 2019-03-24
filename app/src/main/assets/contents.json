@@ -137,6 +137,222 @@
         }
       ]
     },
+    {
+      "identifier": "6",
+      "name": "PR",
+      "publisher": "CBM",
+      "tray_image_file": "PR.png",
+      "publisher_email":"",
+      "publisher_website": "",
+      "privacy_policy_website": "",
+      "license_agreement_website": "",
+      "stickers": [
+        {
+          "image_file": "1.webp"
+        },
+        {
+          "image_file": "2.webp"
+        },
+        {
+          "image_file": "3.webp"
+        },
+        {
+          "image_file": "4.webp"
+        },
+        {
+          "image_file": "5.webp"
+        }
+      ]
+    },
+    {
+      "identifier": "7",
+      "name": "CE",
+      "publisher": "CBM",
+      "tray_image_file": "ce.png",
+      "publisher_email":"",
+      "publisher_website": "",
+      "privacy_policy_website": "",
+      "license_agreement_website": "",
+      "stickers": [
+        {
+          "image_file": "1.webp"
+        },
+        {
+          "image_file": "2.webp"
+        },
+        {
+          "image_file": "3.webp"
+        },
+        {
+          "image_file": "4.webp"
+        },
+        {
+          "image_file": "5.webp"
+        }
+      ]
+    },
+    {
+      "identifier": "risadas1",
+      "name": "RISADAS 1",
+      "publisher": "CBM",
+      "tray_image_file": "risadas1.png",
+      "publisher_email":"",
+      "publisher_website": "",
+      "privacy_policy_website": "",
+      "license_agreement_website": "",
+      "stickers": [
+        {
+          "image_file": "1.webp"
+        },
+        {
+          "image_file": "2.webp"
+        },
+        {
+          "image_file": "3.webp"
+        },
+        {
+          "image_file": "4.webp"
+        },
+        {
+          "image_file": "5.webp"
+        }
+      ]
+    },
+    {
+      "identifier": "risadas2",
+      "name": "RISADAS 2",
+      "publisher": "CBM",
+      "tray_image_file": "risadas2.png",
+      "publisher_email":"",
+      "publisher_website": "",
+      "privacy_policy_website": "",
+      "license_agreement_website": "",
+      "stickers": [
+        {
+          "image_file": "1.webp"
+        },
+        {
+          "image_file": "2.webp"
+        },
+        {
+          "image_file": "3.webp"
+        },
+        {
+          "image_file": "4.webp"
+        },
+        {
+          "image_file": "5.webp"
+        }
+      ]
+    },
+    {
+      "identifier": "saudacoes1",
+      "name": "SAUDAÇÕES 1",
+      "publisher": "CBM",
+      "tray_image_file": "saudacoes1.png",
+      "publisher_email":"",
+      "publisher_website": "",
+      "privacy_policy_website": "",
+      "license_agreement_website": "",
+      "stickers": [
+        {
+          "image_file": "1.webp"
+        },
+        {
+          "image_file": "2.webp"
+        },
+        {
+          "image_file": "3.webp"
+        },
+        {
+          "image_file": "4.webp"
+        },
+        {
+          "image_file": "5.webp"
+        }
+      ]
+    },
+    {
+      "identifier": "saudacoes2",
+      "name": "SAUDAÇÕES 2",
+      "publisher": "CBM",
+      "tray_image_file": "saudacoes2.png",
+      "publisher_email":"",
+      "publisher_website": "",
+      "privacy_policy_website": "",
+      "license_agreement_website": "",
+      "stickers": [
+        {
+          "image_file": "1.webp"
+        },
+        {
+          "image_file": "2.webp"
+        },
+        {
+          "image_file": "3.webp"
+        },
+        {
+          "image_file": "4.webp"
+        },
+        {
+          "image_file": "5.webp"
+        }
+      ]
+    },
+    {
+      "identifier": "gol",
+      "name": "GOL",
+      "publisher": "CBM",
+      "tray_image_file": "gol.png",
+      "publisher_email":"",
+      "publisher_website": "",
+      "privacy_policy_website": "",
+      "license_agreement_website": "",
+      "stickers": [
+        {
+          "image_file": "1.webp"
+        },
+        {
+          "image_file": "2.webp"
+        },
+        {
+          "image_file": "3.webp"
+        },
+        {
+          "image_file": "4.webp"
+        },
+        {
+          "image_file": "5.webp"
+        }
+      ]
+    },
+    {
+      "identifier": "love",
+      "name": "LOVE",
+      "publisher": "CBM",
+      "tray_image_file": "love.png",
+      "publisher_email":"",
+      "publisher_website": "",
+      "privacy_policy_website": "",
+      "license_agreement_website": "",
+      "stickers": [
+        {
+          "image_file": "1.webp"
+        },
+        {
+          "image_file": "2.webp"
+        },
+        {
+          "image_file": "3.webp"
+        },
+        {
+          "image_file": "4.webp"
+        },
+        {
+          "image_file": "5.webp"
+        }
+      ]
+    },
 	  {
       "identifier": "dbz",
       "name": "BÔNUS 1",
