@@ -11,8 +11,8 @@ android {
         applicationId "com.bcm.stickersfrasesbrasil"
         minSdkVersion 15
         targetSdkVersion 28
-        versionCode 7
-        versionName "1.5"
+        versionCode 8
+        versionName "1.6"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         def contentProviderAuthority = applicationId + ".stickercontentprovider"
         // Creates a placeholder property to use in the manifest.

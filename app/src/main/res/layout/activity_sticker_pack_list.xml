@@ -6,33 +6,53 @@
     tools:context=".StickerPackListActivity"
     tools:showIn="@layout/activity_sticker_pack_list">
 
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:translationY="-150dp">
+
+        <ImageView
+            android:id="@+id/imageView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/publicidade" />
+
+        <Button
+            android:id="@+id/btnChangeImage"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="DOWNLOAD AGORA!"
+            android:translationY="-155dp" />
+    </LinearLayout>
+
+
     <TextView
+        android:id="@+id/error_message"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:padding="16dp"
-        android:textColor="@android:color/holo_red_dark"
-        android:id="@+id/error_message" />
+        android:textColor="@android:color/holo_red_dark" />
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/sticker_pack_list"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:translationY="240dp" />
 
     <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
-        android:layout_height="match_parent"
-        android:layout_width="match_parent">
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-        <com.google.android.gms.ads.AdView
-            xmlns:ads="http://schemas.android.com/apk/res-auto"
+        <com.google.android.gms.ads.AdView xmlns:ads="http://schemas.android.com/apk/res-auto"
             android:id="@+id/adView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
             android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
             ads:adSize="BANNER"
-            ads:adUnitId="ca-app-pub-6978323205998171/3596320267">
-        </com.google.android.gms.ads.AdView>
+            ads:adUnitId="ca-app-pub-6978323205998171/3596320267"></com.google.android.gms.ads.AdView>
 
     </RelativeLayout>
 

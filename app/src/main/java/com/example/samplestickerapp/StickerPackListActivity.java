@@ -25,6 +25,11 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+//button
+import android.content.Intent;
+import android.net.Uri;
+import android.view.View;
+import android.widget.Button;
 
 public class StickerPackListActivity extends AddStickerPackActivity {
     public static final String EXTRA_STICKER_PACK_LIST_DATA = "sticker_pack_list";
@@ -36,6 +41,10 @@ public class StickerPackListActivity extends AddStickerPackActivity {
     private ArrayList<StickerPack> stickerPackList;
     private AdView mAdView;
     private InterstitialAd mInterstitialAd;
+
+    //button
+    Button button;
+    Intent intent ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,6 +64,24 @@ public class StickerPackListActivity extends AddStickerPackActivity {
         mAdView = findViewById(R.id.adView);
         AdRequest adRequest = new AdRequest.Builder().build();
         mAdView.loadAd(adRequest);
+
+        //button
+        button = (Button)findViewById(R.id.btnChangeImage);
+        button.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                // TODO Auto-generated method stub
+
+                intent = new Intent(android.content.Intent.ACTION_VIEW);
+
+                //Copy App URL from Google Play Store.
+                intent.setData(Uri.parse("https://play.google.com/store/apps/details?id=com.bcm.bope_az_vs_zombie"));
+
+                startActivity(intent);
+
+            }
+        });
     }
 
     @Override
